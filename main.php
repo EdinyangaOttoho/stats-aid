@@ -16,7 +16,7 @@ function projectedEarnings($data, $days) {
 	$average_denominator = (array_sum($timestamps) / count($timestamps))/86400;
 	$rate_per_day = ($average_numerator / $average_denominator);
 	function arithmetic_progression($a, $n, $d) {
-		return $a + ($n * $d);
+		return $a + ($n-1) * $d;
 	}
 	$ap = arithmetic_progression($total_capital, $days, $rate_per_day);
 	return round($ap);
